@@ -22,18 +22,18 @@ void afficherTousLesContacts() {
     system("cls");
     if (contactCounter == 0) {
 printf(COLOR_RED"+---------------------------------------------+\n");
-         printf("| Aucun Contact Rouve. Veuillez En Ajouter Un |\n");
+         printf("| Aucun Contact Trouver. Veuillez En Ajouter Un |\n");
          printf("+---------------------------------------------+\n"COLOR_RESET);
         return;
     }
-    printf("+--------------------------------------------------------------------------+\n");
+    printf(COLOR_YELLOW"+--------------------------------------------------------------------------+\n");
     printf("|                            Liste des Contacts                            |\n");
     printf("+-----+----------------------+----------------------+----------------------+\n");
     printf("| ID  |         Nom          | Numero De Telephone  |    Adresse Email     |\n");
     printf("+-----+----------------------+----------------------+----------------------+\n");
     for (int i = 0; i < contactCounter; i++) {
         printf("| %-3d | %-20s | %-20s | %-20s |\n", i, contacts[i].nom, contacts[i].numeroDeTelephone, contacts[i].adresseEmail);
-    printf("+-----+----------------------+----------------------+----------------------+\n");
+    printf("+-----+----------------------+----------------------+----------------------+\n"COLOR_RESET);
     }
 }
 
@@ -204,8 +204,8 @@ int terminal() {
                 triLesContacts();
                 break;
             case 7:
-                printf("Fermeture en cours...\n");
-                printf(COLOR_GREEN"+------------------+\n");
+                printf(COLOR_GREEN"Fermeture en cours...\n");
+                printf("+------------------+\n");
                 printf("| A la prochaine ! |\n");
                 printf("+------------------+\n"COLOR_RESET);
                 return 0;
@@ -216,8 +216,8 @@ int terminal() {
         }
     }
 }
-
 int main() {
     terminal();
     return 0;
+
 }
