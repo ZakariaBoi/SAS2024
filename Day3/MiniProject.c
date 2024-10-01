@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAXCONTACTS 100
-#define COLOR_RESET "\033[0m"
-#define COLOR_RED "\033[31m"
-#define COLOR_GREEN "\033[32m"
-#define COLOR_BLUE "\033[34m"
+#define MAXCONTACTS  100
+#define COLOR_RESET  "\033[0m"
+#define COLOR_RED    "\033[31m"
+#define COLOR_GREEN  "\033[32m"
+#define COLOR_BLUE   "\033[34m"
 #define COLOR_YELLOW "\033[33m"
 
 struct Contact {
@@ -128,7 +128,7 @@ void rechercherUnContact() {
     printf(COLOR_GREEN"+-----------------------+\n");
     printf("| Rechercher Un Contact |\n");
     printf("+-----------------------+\n"COLOR_RESET);
-    printf(COLOR_BLUE"Nom du Contact : "COLOR_BLUE);
+    printf(COLOR_BLUE"Nom Du Contact : "COLOR_BLUE);
     scanf("%s", query);
     printf(COLOR_GREEN"Recherching...\n"COLOR_RESET);
     for (int i = 0; i < contactCounter; i++) {
@@ -136,16 +136,16 @@ void rechercherUnContact() {
             printf(COLOR_GREEN"+-----------------+\n");
             printf("| Contact Trouvee |\n");
             printf("+-----------------+\n"COLOR_RESET);
-            printf(COLOR_GREEN"+-----+-------------------------+-----------------------+-------------------------+\n");
-            printf("| ID  |           Nom           |  Numero De Telephone  |      Adresse Email      |\n");
-            printf("+-----+-------------------------+-----------------------+-------------------------+\n");
+            printf(COLOR_YELLOW"+-----+----------------------+----------------------+----------------------+\n");
+            printf("| ID  |         Nom          | Numero De Telephone  |    Adresse Email     |\n");
+            printf("+-----+----------------------+----------------------+----------------------+\n");
             printf("| %-3d | %-20s | %-20s | %-20s |\n", i, contacts[i].nom, contacts[i].numeroDeTelephone, contacts[i].adresseEmail);
-            printf("+-----+-------------------------+-----------------------+-------------------------+\n"COLOR_RESET);
+            printf("+-----+----------------------+----------------------+----------------------+\n"COLOR_RESET);
             return;
         }
     }
     printf(COLOR_RED"+---------------------+\n");
-    printf("| Contact introuvable |\n");
+    printf("| Contact Introuvable |\n");
     printf("+---------------------+\n"COLOR_RESET);
 }
 
@@ -204,14 +204,14 @@ int terminal() {
                 triLesContacts();
                 break;
             case 7:
-                printf(COLOR_GREEN"Fermeture en cours...\n");
+                printf(COLOR_GREEN"Fermeture En Cours...\n");
                 printf("+------------------+\n");
-                printf("| A la prochaine ! |\n");
+                printf("| A la Prochaine ! |\n");
                 printf("+------------------+\n"COLOR_RESET);
                 return 0;
             default:
                 printf(COLOR_RED"+----------------------+\n");
-                printf("| Commande non trouvee |\n");
+                printf("| Commande Non Trouvee |\n");
                 printf("+----------------------+\n"COLOR_RESET);
         }
     }
