@@ -128,6 +128,7 @@ int checkStock(){
 }
 
 int terminal() {
+    system("title Systeme de Gestion de Stock dans une Librairie");
     system("cls");
     int choice;
     while (1) {
